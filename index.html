@@ -1,0 +1,1672 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Srujana R | AI & Data Science</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b18;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(8, 11, 24, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: #d6d8e2;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8b5cf6;
+        }
+
+        .contact-btn {
+            padding: 9px 18px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 120px 8% 60px;
+
+            background:
+                radial-gradient(circle at 20% 30%, #312e81 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, #831843 0%, transparent 30%),
+                #080b18;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: slideIn 1s ease;
+        }
+
+        .small-title {
+            color: #a78bfa;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #ec4899,
+                #06b6d4
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: #c5c8d4;
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: linear-gradient(
+                135deg,
+                #8b5cf6,
+                #ec4899
+            );
+        }
+
+        .secondary {
+            border: 1px solid #555b75;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile-area {
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #ec4899,
+                    #06b6d4
+                );
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile {
+            width: 330px;
+            height: 330px;
+
+            border-radius: 50%;
+
+            background: #11152a;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 90px;
+            font-weight: bold;
+
+            color: #a78bfa;
+
+            border: 8px solid #080b18;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: #a78bfa;
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: #0d1122;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .about-text {
+            color: #c8cad5;
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-card {
+            background: linear-gradient(
+                145deg,
+                #171b35,
+                #11152a
+            );
+
+            padding: 30px;
+            border-radius: 20px;
+
+            border: 1px solid #292e4b;
+        }
+
+        .about-card h3 {
+            margin-bottom: 20px;
+            color: #a78bfa;
+        }
+
+        .about-card li {
+            list-style: none;
+            margin: 12px 0;
+            color: #d8d9e3;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background: #11152a;
+
+            border-left: 5px solid #8b5cf6;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .education-card h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .education-card .college {
+            color: #a78bfa;
+            font-weight: bold;
+        }
+
+        .education-card p {
+            color: #bbbfd0;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        #skills {
+            background: #0d1122;
+        }
+
+        .skills-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: #11152a;
+            padding: 25px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            border: 1px solid #252a46;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #8b5cf6;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            margin-bottom: 15px;
+        }
+
+        .skill p {
+            color: #aeb2c3;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: linear-gradient(
+                145deg,
+                #151a32,
+                #0e1225
+            );
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            border: 1px solid #292e4c;
+
+            transition: 0.4s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: #8b5cf6;
+        }
+
+        .project-number {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project h3 {
+            font-size: 27px;
+            margin: 15px 0;
+        }
+
+        .project p {
+            color: #b9bdcc;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            background: #242944;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #d5d7e1;
+        }
+
+        .github {
+            color: #a78bfa;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CERTIFICATIONS
+        ========================= */
+
+        #certifications {
+            background: #0d1122;
+        }
+
+        .cert-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .cert {
+            padding: 25px;
+
+            background: #11152a;
+
+            border-radius: 18px;
+
+            border: 1px solid #272c48;
+        }
+
+        .cert h3 {
+            color: #a78bfa;
+            margin-bottom: 10px;
+        }
+
+        .cert p {
+            color: #b8bccb;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 35px;
+
+            background: #11152a;
+
+            border-radius: 20px;
+
+            border-left: 5px solid #ec4899;
+        }
+
+        .experience h3 {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .experience p {
+            color: #b9bdcc;
+        }
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================= */
+
+        #achievements {
+            background: #0d1122;
+        }
+
+        .achievement-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .achievement {
+            padding: 30px;
+
+            background: #11152a;
+
+            border-radius: 18px;
+
+            border: 1px solid #292e4a;
+        }
+
+        .achievement-number {
+            color: #ec4899;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .achievement h3 {
+            margin: 10px 0;
+        }
+
+        .achievement p {
+            color: #afb3c2;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #312e81,
+                    #080b18 60%
+                );
+        }
+
+        .contact h2 {
+            font-size: 50px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact h2 span {
+            color: #ec4899;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 20px auto 35px;
+            color: #c0c3d0;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 14px 22px;
+
+            background: #171b35;
+
+            border: 1px solid #353a58;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-4px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 25px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: #050711;
+
+            color: #8e92a4;
+
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+        }
+
+        @keyframes slideIn {
+
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 60px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile-area {
+                width: 280px;
+                height: 280px;
+            }
+
+            .profile {
+                width: 255px;
+                height: 255px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .section-title h2 {
+                font-size: 35px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact h2 {
+                font-size: 38px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <a href="#home" class="logo">
+        <span>SR</span> Srujana R
+    </a>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#certifications">Certifications</a>
+
+        <a href="#achievements">Achievements</a>
+
+        <a href="#contact" class="contact-btn">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            B.E. AI & DATA SCIENCE
+        </div>
+
+        <h1>
+
+            Hi, I'm
+
+            <span class="gradient-text">
+                Srujana R
+            </span>
+
+        </h1>
+
+        <p>
+
+            Artificial Intelligence & Data Science student
+            passionate about building intelligent,
+            data-driven and practical solutions.
+
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects"
+               class="btn primary">
+
+                View My Projects 
+
+            </a>
+
+            <a href="#contact"
+               class="btn secondary">
+
+                Let's Connect
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-area">
+
+        <div class="profile">
+
+            SR
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <span>01 — ABOUT ME</span>
+
+        <h2>
+            Who I Am
+        </h2>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <p>
+
+                I'm a B.E. Artificial Intelligence &
+                Data Science student at
+
+                <strong>
+                    GSSS Institute of Engineering and
+                    Technology for Women, Mysore, Karnataka.
+                </strong>
+
+            </p>
+
+            <p>
+
+                I enjoy solving real-world problems using
+                programming, Artificial Intelligence,
+                Machine Learning and Data Analytics.
+
+            </p>
+
+            <p>
+
+                My approach is simple:
+                learn continuously, build practical projects,
+                understand the technology and improve through
+                hands-on experience.
+
+            </p>
+
+            <p>
+
+                I'm currently focused on strengthening my
+                programming, AI and data science skills while
+                becoming placement-ready.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                What I Bring
+            </h3>
+
+            <ul>
+
+                <li> Problem Solving</li>
+
+                <li> Data-driven Thinking</li>
+
+                <li> Programming</li>
+
+                <li> AI & ML</li>
+
+                <li> Continuous Learning</li>
+
+                <li> Team Collaboration</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="section-title">
+
+        <span>02 — EDUCATION</span>
+
+        <h2>
+            Academic Journey
+        </h2>
+
+    </div>
+
+
+    <div class="education-card">
+
+        <h3>
+            B.E. — Artificial Intelligence &
+            Data Science
+        </h3>
+
+        <div class="college">
+
+            GSSS Institute of Engineering and
+            Technology for Women
+
+        </div>
+
+        <p>
+            Mysore, Karnataka
+        </p>
+
+        <p>
+
+            Currently pursuing engineering with a focus
+            on Artificial Intelligence, Data Science,
+            programming, Machine Learning and analytics.
+
+        </p>
+
+        <div class="tags">
+
+            <span>Artificial Intelligence</span>
+
+            <span>Data Science</span>
+
+            <span>Programming</span>
+
+            <span>Machine Learning</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <span>03 — TECHNICAL SKILLS</span>
+
+        <h2>
+            My Toolkit
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                Python
+            </h3>
+
+            <p>
+                Programming, automation and
+                data applications.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                Java
+            </h3>
+
+            <p>
+                Object-oriented programming
+                and problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                SQL
+            </h3>
+
+            <p>
+                Database queries and
+                data management.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                AI & ML
+            </h3>
+
+            <p>
+                Artificial Intelligence and
+                Machine Learning concepts.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                Data Science
+            </h3>
+
+            <p>
+                Data analysis and
+                visualization.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                Power BI
+            </h3>
+
+            <p>
+                Interactive dashboards
+                and analytics.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                Excel
+            </h3>
+
+            <p>
+                Data analysis and
+                spreadsheet workflows.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                
+            </div>
+
+            <h3>
+                Pandas & NumPy
+            </h3>
+
+            <p>
+                Data manipulation and
+                numerical computing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <span>04 — PROJECTS</span>
+
+        <h2>
+            Things I've Built
+        </h2>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                SmartAttend
+            </h3>
+
+            <p>
+
+                A QR-based event attendance system
+                for seminars, workshops, hackathons
+                and institutional events.
+
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>Flask</span>
+                <span>SQLite</span>
+                <span>QR</span>
+
+            </div>
+
+            <a class="github"
+               href="https://github.com/Srujana767/SmartAttend"
+               target="_blank">
+
+                GitHub 
+
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                SpamLens
+            </h3>
+
+            <p>
+
+                A Machine Learning based email spam
+                detection application using
+                classification techniques.
+
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Naive Bayes</span>
+                <span>Data</span>
+
+            </div>
+
+            <a class="github"
+               href="https://github.com/Srujana767"
+               target="_blank">
+
+                GitHub 
+
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                Currency Watch
+            </h3>
+
+            <p>
+
+                Data analytics project studying African
+                currency movements against the US Dollar
+                using historical data.
+
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Analytics</span>
+                <span>Visualization</span>
+
+            </div>
+
+            <a class="github"
+               href="https://github.com/Srujana767"
+               target="_blank">
+
+                GitHub 
+
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>
+                Visual Pantry Meal Planner
+            </h3>
+
+            <p>
+
+                A Generative AI application that identifies
+                grocery items from images and generates
+                meal ideas using available ingredients.
+
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>GenAI</span>
+                <span>Computer Vision</span>
+                <span>Gradio</span>
+
+            </div>
+
+            <a class="github"
+               href="https://github.com/Srujana767"
+               target="_blank">
+
+                GitHub 
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATIONS
+========================= -->
+
+<section id="certifications">
+
+    <div class="section-title">
+
+        <span>05 — CERTIFICATIONS</span>
+
+        <h2>
+            Learning & Training
+        </h2>
+
+    </div>
+
+
+    <div class="cert-grid">
+
+
+        <div class="cert">
+
+            <h3>
+                IBM SkillsBuild
+            </h3>
+
+            <p>
+                Completed professional technology
+                learning through IBM SkillsBuild.
+            </p>
+
+        </div>
+
+
+        <div class="cert">
+
+            <h3>
+                GeeksforGeeks SkillUp
+            </h3>
+
+            <p>
+                30-day Summer SkillUp covering
+                SQL, Cybersecurity, Machine Learning
+                and Generative AI.
+            </p>
+
+        </div>
+
+
+        <div class="cert">
+
+            <h3>
+                Samsung Innovation Campus
+            </h3>
+
+            <p>
+                Training in coding, programming
+                and Generative AI.
+            </p>
+
+        </div>
+
+
+        <div class="cert">
+
+            <h3>
+                Python Bootcamp
+            </h3>
+
+            <p>
+                Practical Python programming and
+                hands-on development experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTERNSHIP
+========================= -->
+
+<section id="experience">
+
+    <div class="section-title">
+
+        <span>06 — EXPERIENCE</span>
+
+        <h2>
+            Internship & Training
+        </h2>
+
+    </div>
+
+
+    <div class="experience">
+
+        <h3>
+            AI, Data Science & Programming Training
+        </h3>
+
+        <p>
+
+            Hands-on exposure through academic and
+            industry-oriented training programs covering
+            Python, C, Artificial Intelligence,
+            Data Analytics, Quantitative Aptitude,
+            Advanced C and professional skills.
+
+        </p>
+
+        <div class="tags">
+
+            <span>Python</span>
+            <span>AI</span>
+            <span>Data Analytics</span>
+            <span>C</span>
+            <span>Problem Solving</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ACHIEVEMENTS
+========================= -->
+
+<section id="achievements">
+
+    <div class="section-title">
+
+        <span>07 — ACHIEVEMENTS</span>
+
+        <h2>
+            Milestones
+        </h2>
+
+    </div>
+
+
+    <div class="achievement-grid">
+
+
+        <div class="achievement">
+
+            <div class="achievement-number">
+                01
+            </div>
+
+            <h3>
+                Samsung Innovation Campus
+            </h3>
+
+            <p>
+                Selected for Samsung Innovation
+                Campus training.
+            </p>
+
+        </div>
+
+
+       
+
+        <div class="achievement">
+
+            <div class="achievement-number">
+                03
+            </div>
+
+            <h3>
+                Project Building
+            </h3>
+
+            <p>
+                Built projects across AI,
+                Machine Learning, Data Analytics
+                and application development.
+            </p>
+
+        </div>
+
+
+        <div class="achievement">
+
+            <div class="achievement-number">
+                04
+            </div>
+
+            <h3>
+                Continuous Learning
+            </h3>
+
+            <p>
+                Actively developing technical skills
+                through bootcamps and training programs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <span>08 — CONTACT</span>
+
+        <h2>
+            Let's Build Something
+            <span>Meaningful.</span>
+        </h2>
+
+    </div>
+
+
+    <p>
+
+        I'm open to internships, opportunities,
+        collaborations, mentorship and interesting
+        technology projects.
+
+    </p>
+
+
+    <div class="contact-links">
+
+        <!-- Replace phone number -->
+
+        <a class="contact-link"
+           href="tel:+918088654062">
+
+             +91 8088654062
+
+        </a>
+
+
+        <!-- Replace email -->
+
+        <a class="contact-link"
+           href="mailto:your.email@example.com">
+
+             srujana.r76@gmail.com
+
+        </a>
+
+
+        <a class="contact-link"
+           href="https://github.com/Srujana767"
+           target="_blank">
+
+            GitHub 
+
+        </a>
+
+
+        <a class="contact-link"
+           href="https://www.linkedin.com/in/srujana-r-7845b4385/"
+           target="_blank">
+
+            LinkedIn 
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+
+        <strong>
+            Srujana R
+        </strong>
+
+        — AI & Data Science
+
+    </div>
+
+    <div>
+        © 2026 Srujana R
+    </div>
+
+    <a href="#home">
+        Back to Top ?
+    </a>
+
+</footer>
+
+
+</body>
+
+</html>
+```
